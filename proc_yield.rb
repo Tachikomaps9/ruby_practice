@@ -36,3 +36,18 @@ end
 sai_ori do
     puts "元々の形；proc引数渡しでメソッド実行"
 end
+
+#-----------------
+#ブロックが引数に渡されたか判断
+
+def yield_test
+    if block_given?
+        yield
+    else
+        puts 'ブロックが渡されませんでした'
+    end
+end
+
+yield_test { puts 'ブロックを渡しました' }
+
+yield_test

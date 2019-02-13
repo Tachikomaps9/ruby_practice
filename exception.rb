@@ -38,3 +38,29 @@ rescue ZeroDivisionError => e
 end
 
 puts '終了'
+
+#-----------------
+#raise 例外を起こす
+
+#runtimeErrorを起こす
+begin
+  raise 
+rescue => e
+  p e  
+end
+
+#例外を指定する
+begin
+  raise ZeroDivisionError
+rescue => e
+  p e  
+end
+
+#例外クラスの作成
+class MyError < StandardError; end
+
+begin
+  raise MyError
+  rescue => e
+    p e
+  end
